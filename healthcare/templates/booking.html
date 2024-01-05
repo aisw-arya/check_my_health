@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{%extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% if b %}
+    <div style="height:700px;width:100%;">
+        <p>booked successfully </p>
+        {{b.name}}
+        {{b.booking_date}}
+
+
+
+<div class="new">
+        <h5>PLEASE TAKE A SCREENSHOT OF THIS PAGE</h5>
+         </div>
+</div>
+    {% endif %}
+{% endblock %}

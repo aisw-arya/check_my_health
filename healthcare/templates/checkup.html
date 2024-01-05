@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{%extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+<div class="col-sm-6" style="height:700px;">
+    <table class="table border bordered">
+        <tr>
+            <th>Cholesterol</th>
+            <th>Sugar</th>
+            <th>Blood Pressure</th>
+            <th>Date</th>
+            <th>Suggestion</th>
+            <th>Doctor</th>
+            <th>patient name</th>
+        </tr>
+        {% for i in c %}
+        <tr>
+            <td>{{i.cholesterol}}</td>
+            <td>{{i.sugar}}</td>
+            <td>{{i.pressure}}</td>
+            <td>{{i.date_added}}</td>
+            <td>{{i.suggested}}</td>
+            <td>{{i.name}}</td>
+            {% if user.is_doctor == True %}
+            <td>{{i.user.username}}</td>
+            <td><a href="{% url 'suggestion' i.id %}" class="btn btn-primary">Suggestions</a></td>
+            {% else %}
+            <td><a href="{% url 'delete' i.id %}" class="btn btn-primary">Delete</a></td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<br>
+<div class="col-sm-1">
+<a href="{% url 'adddata' %}" class="btn btn-success"><i class="fa-solid fa-plus"></i></a>
+</div>
+</div>
+<br><br><br>
+{% endblock %}

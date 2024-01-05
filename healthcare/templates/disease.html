@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{%extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+{% for i in d %}
+<div class="col-sm-4">
+<div class="card" style="width: 100%;height:500px;">
+  <div class="card-body">
+      <h5 class="card-title"><b>Disease: </b>{{i.disease}}</h5>
+      <p class="card-text"><b>Symptoms:</b>  {{i.symptoms}}</p>
+      <p class="card-text"><b>Details:</b>{{i.details}}</p>
+      <p class="card-text"><b>Doctor:</b>{{i.doctor}}</p>
+    <p class="card-text"><b>Hospital:</b>{{i.hospital}}</p>
+    <a class="btn btn-primary" href="{% url 'consultation' i.doctor %}">consultation</a>
+  </div>
+</div>
+</div>
+{% endfor %}
+        </div>
+{% endblock %}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{%extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div>
+    <img src="{% static 'images/bg.gif' %}" style="height:550px;width:100%;">
+    <div style="background-image={% static 'image/bg1.jpg'%}"></div>
+</div>
+<p>
+    "Welcome to our Health Diagnose Site, where cutting-edge technology meets compassionate care. Our platform is designed to empower individuals to take control of their health by providing accurate, reliable, and personalized diagnostic insights. With user-friendly interfaces and advanced algorithms, we offer a seamless and confidential experience, guiding users through a comprehensive assessment of their symptoms. Our commitment to privacy ensures that your health information is handled with the utmost confidentiality.
+</p>
+<div class="row">
+    <div class="col-sm-6">
+    <img src="{% static 'images/bg2.jpg' %}" style="height:550px;width:100%;">
+        </div>
+    <div class="col-sm-6">
+    <img src="{% static 'images/bg3.jpg' %}" style="height:550px;width:100%;">
+        </div>
+</div>
+<div class="new text-white fs-4">Disclaimer:The information provided on this site is for general informational purposes only and is not intended as a substitute for professional medical advice, diagnosis, or treatment. Do not disregard professional medical advice or delay seeking it because of information found on this site.</div>
+
+{% endblock %}
